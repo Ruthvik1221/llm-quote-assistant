@@ -4,6 +4,10 @@ Turns a customer's free-text job description ("basement full of junk, old fridge
 
 > This is a clean-room reference implementation written from scratch to show the pattern. It contains no client or employer code, prompts or data. Rates in `pricing.ts` are example numbers.
 
+## Background
+
+I designed and built the production version of this at New Paltz Marketing: a **GenAI quoting chatbot for Velocity Graphics**, a large-format printing company, that turns a customer's description of a job into a structured quote request and lead. That code belongs to my employer and its client, so this repository is a clean-room rewrite, written from scratch, to show the same architecture and decisions publicly. No employer or client code, prompts or data are included.
+
 ## The core idea: the model extracts, code prices
 
 LLMs are good at reading messy text and bad at arithmetic and policy. So the model is only allowed to return **facts** in a strict schema. A plain TypeScript function turns those facts into a price. The model never states a number the customer sees.
